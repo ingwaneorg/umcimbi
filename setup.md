@@ -13,6 +13,24 @@
 - PostgreSQL is used in Google Cloud
 
 ---
+## Models
+
+### Event
+- id
+- course/code --> FK
+- active
+
+### Courses
+- code
+- name
+
+### Activities
+- course/code --> FK
+- day
+- sort_order
+- description
+
+---
 ## Installation
 
 ### Install Django
@@ -36,20 +54,19 @@
 ### Set Up the Database
 - `python manage.py migrate`
 
+### Create admin user
+- `python manage.py createsuperuser`
+
 ---
-## Models
+## Ongoing
 
-### Event
-- id
-- course/code --> FK
-- active
+### After changing a model - run:
+- `python manage.py makemigrations tracker`
+- `python manage.py migrate`
+- Add the details to admin: tracker / admin ~ (if required)
 
-### Courses
-- code
-- name
 
-### Activities
-- course/code --> FK
-- day
-- sort_order
-- description
+### to flush data - run:
+- `python ??`
+- Note: this deletes **all the users** as well!
+- `python src/load_csv_data.py`

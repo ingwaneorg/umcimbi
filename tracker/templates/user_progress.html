@@ -1,0 +1,18 @@
+<h2>{{ user.name }} - Progress for Event {{ event.short_code }}</h2>
+
+<table border="1">
+    <tr>
+        <th>Activity</th>
+        <th>Day</th>
+        <th>Completed</th>
+        <th>Comments</th>
+    </tr>
+    {% for ua in user_activities %}
+    <tr>
+        <td>{{ ua.activity.title }}</td>
+        <td>Day {{ ua.activity.day }}</td>
+        <td>{% if ua.completed %} ✅ {% else %} ❌ {% endif %}</td>
+        <td>{{ ua.comment }}</td>
+    </tr>
+    {% endfor %}
+</table>
