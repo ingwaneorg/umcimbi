@@ -1,0 +1,21 @@
+{% extends "_base.html" %}
+
+{% block title %}Activities for User {{ user_id }}{% endblock %}
+
+{% block content %}
+<div class="main tutor">
+  <div class="panel">
+    <div class="section">
+
+      <div class="row">
+        <h1>Activities for User {{ user_id }}</h1>
+      </div>
+
+      <div class="section">
+        {{ user.vm_url }}
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

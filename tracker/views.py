@@ -14,7 +14,6 @@ def event_users(request, short_code):
     }
     return render(request, 'event_users.html', context)
 
-
 def user_progress(request, short_code, user_id):
     # Get event using the short code
     event = get_object_or_404(Event, short_code=short_code)
@@ -31,3 +30,16 @@ def user_progress(request, short_code, user_id):
         'user_activities': user_activities,
     }
     return render(request, 'user_progress.html', context)
+
+def user_vm(request, short_code, user_id):
+    # Get event using the short code
+    event = get_object_or_404(Event, short_code=short_code)
+
+    # Get user
+    user = get_object_or_404(User, user_id=user_id)
+
+    context = {
+        'event': event,
+        'user': user,
+    }
+    return render(request, 'user_vm.html', context)
